@@ -1,0 +1,22 @@
+[dronekit]
+#connection_string = '0.0.0.0:14550'
+
+[camera]
+type = 0
+width = 640
+height = 480
+horizontal-fov = 70.42
+vertical-fov = 43.3
+video_output_file = ~/balloon-%%Y-%%m-%%d-%%H-%%M.avi
+
+[balloon]
+h-low = 124
+h-high = 255
+s-low = 195
+s-high = 255
+v-low = 72
+v-high = 255
+
+[general]
+simulate = True
+
