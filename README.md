@@ -17,6 +17,7 @@ We are using the basic Pi Zero on this system , we dont need additionnal connect
 
 
 Python Scripting
+
 Based on the original code, https://github.com/rmackay9/ardupilot-balloon-finder, lets take a look inside :
 On your RPI, open a terminal window  and git clone OpenTracker
 
@@ -30,6 +31,7 @@ Once completed, comment out the print command, save and you are ready for test.
 
 
 OpenMV script
+
 Open IDE
 Load the Script
 Adjut the color filter using  Tools/Machine Vision/ Threshold editor
@@ -41,6 +43,7 @@ When satisfied, Tools/Save Open script to OpenMV
 
 
 Testing in SITL
+
 Practice makes good and using SITL may save your day ;-)
 Leaving the
 You can connect the RPI Zero Ftdi Usb to Serial converter to a  second FTDI  USB to serial  on a  Linux based computer (dont forget to cross the XMIT to RX(
