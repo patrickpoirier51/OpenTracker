@@ -6,9 +6,9 @@ import string
 class OpenMV(object):
 
         def __init__(self):
-            self.ser = serial.Serial(port='/dev/ttyAMA0',baudrate=9600, timeout = 0.2)
-
-
+            self.ser = serial.Serial(port='/dev/ttyAMA0',baudrate=115200, timeout = 0.5)
+            self.ser.flushInput();
+   
         def balloon_xysize(self):
             balloon_found = False
             balloon_x = 0
@@ -16,6 +16,7 @@ class OpenMV(object):
             balloon_radius = 0
             w = 0
             
+            self.ser.flushInput();
             line = self.ser.readline()
             words = string.split(line , ";")    # Fields split
             if len(words) > 3:
@@ -36,10 +37,11 @@ class OpenMV(object):
                 #print "Invalid line"
 
 
-            #print balloon_found, balloon_x, balloon_y, balloon_radius    
-            self.ser.close
+            print balloon_found, balloon_x, balloon_y, balloon_radius    
+            
             #print "closed"
-            return balloon_found, balloon_x, balloon_y, balloon_radius
+            #return balloon_found, balloon_x, balloon_y, balloon_radius
+        
 
         
               
@@ -47,8 +49,9 @@ class OpenMV(object):
         def main(self):
                 while True:
                     self.balloon_xysize()
-
-
+                      
+                exit(1)
+                self.ser.close
    
 # create the global balloon_finder object
 open_mv = OpenMV()
